@@ -11,4 +11,11 @@ export class HeroesComponent {
 
   heroes = HEROES;
 
+  selectedHero?: Hero;
+
+  onSelected(hero: Hero): void{
+    this.selectedHero = hero;
+    console.log('hero selected: ' + hero.name)
+  }
+
 }
