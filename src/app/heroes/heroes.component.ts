@@ -14,17 +14,9 @@ export class HeroesComponent {
     this.getHeros();
   }
 
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(private heroService: HeroService) { }
 
   heroes: Hero[] = [];
-
-  selectedHero?: Hero;
-
-  onSelected(hero: Hero): void{
-    this.selectedHero = hero;
-    console.log('hero selected: ' + hero.name)
-      this.messageService.addMessage(`Selectet hero is ${hero.name} with the id ${hero.id}`);
-  }
 
   getHeros(): void {
     this.heroService.getHeroes().subscribe((heroes) => this.heroes = heroes);
